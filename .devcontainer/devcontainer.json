@@ -1,11 +1,12 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "kaggriculture",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
+  "postCreateCommand": "pip install -U pip setuptools wheel && pip install \"kaggle-environments>=1.32.2\"",
   "customizations": {
     "codespaces": {
       "openFiles": []
